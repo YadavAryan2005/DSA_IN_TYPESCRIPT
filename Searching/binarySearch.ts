@@ -17,6 +17,6 @@ function binarySearch(
     }
   }
 }
-const result = binarySearch(arr, searchElement);
+const result = binarySearch(arr, searchElement );
 if (!result) console.log("Element not found");
 else console.log("Element found at index result" + result);
