@@ -14,13 +14,20 @@ class SingleLinkedList {
     this.head = newNode;
     this.head.next = null;
   }
-  addNode(val: number) {
+  //insert new node at the last
+  addEndNode(val: number) {
     const newNode = new ListNode(val);
     let current = this.head;
     while (current?.next) {
       current = current.next;
     }
     current.next = newNode;
+  }
+  //add node at the start
+  addStartNode(val: number) {
+    const newNode = new ListNode(val);
+    newNode.next = this.head;
+    this.head = newNode;
   }
   deleteLastNode() {
     let current = this.head;
@@ -29,6 +36,7 @@ class SingleLinkedList {
     }
     current.next = null;
   }
+  //delete first node from the list
   display() {
     let current = this.head;
     while (current) {
@@ -40,11 +48,5 @@ class SingleLinkedList {
 }
 
 let list = new SingleLinkedList(1);
-list.addNode(2);
-list.addNode(3);
-list.addNode(4);
-list.addNode(5);
-list.display();
-list.deleteLastNode();
-console.log("delete last elemetn");
+list.addStartNode(2);
 list.display();
