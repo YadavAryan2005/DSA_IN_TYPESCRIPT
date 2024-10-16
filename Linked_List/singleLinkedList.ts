@@ -22,6 +22,13 @@ class SingleLinkedList {
     }
     current.next = newNode;
   }
+  deleteLastNode() {
+    let current = this.head;
+    while (current?.next?.next) {
+      current = current.next;
+    }
+    current.next = null;
+  }
   display() {
     let current = this.head;
     while (current) {
@@ -37,4 +44,7 @@ list.addNode(2);
 list.addNode(3);
 list.addNode(4);
 list.addNode(5);
+list.display();
+list.deleteLastNode();
+console.log("delete last elemetn");
 list.display();
